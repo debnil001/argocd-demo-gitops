@@ -14,11 +14,11 @@ spec:
 
   sources:
 
-    - repoURL: https://github.com/YOUR_USERNAME/app-repo.git
+    - repoURL: https://github.com/debnil001/app-repo.git
       targetRevision: main
       path: my-app
 
-    - repoURL: https://github.com/YOUR_USERNAME/gitops-repo.git
+    - repoURL: https://github.com/debnil001/gitops-repo.git
       targetRevision: main
       ref: values
 
