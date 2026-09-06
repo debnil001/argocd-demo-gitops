@@ -14,7 +14,7 @@ spec:
 
   sources:
 
-    - repoURL: https://github.com/debnil001/argocd-demo-gitops.git
+    - repoURL: https://github.com/debnil001/argocd-demo-app.git
       targetRevision: main
       path: my-app
       
