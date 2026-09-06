@@ -14,9 +14,9 @@ spec:
 
   sources:
 
-    - repoURL: https://github.com/debnil001/argocd-demo-app.git
-      targetRevision: main
-      path: my-app
+    - repoURL: ghcr.io/debnil001
+      targetRevision: 0.2.0
+      chart: my-app
       
       helm:
         valueFiles:
