@@ -17,14 +17,15 @@ spec:
     - repoURL: ghcr.io/debnil001
       targetRevision: 0.1.0
       chart: my-app
+      
+      helm:
+        valueFiles:
+        - $values/environments/my-app/prod/values.yaml
+
 
     - repoURL: https://github.com/debnil001/argocd-demo-gitops.git
       targetRevision: main
       ref: values
-
-  helm:
-    valueFiles:
-      - $values/environments/my-app/prod/values.yaml
 
   syncPolicy:
     automated:
