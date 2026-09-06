@@ -14,11 +14,11 @@ spec:
 
   sources:
 
-    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-app.git
-      targetRevision: main
-      path: my-app
+    - repoURL: ghcr.io/debnil001
+      targetRevision: 0.1.0
+      chart: my-app
 
-    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-gitops.git
+    - repoURL: https://github.com/debnil001/argocd-demo-gitops.git
       targetRevision: main
       ref: values
 
