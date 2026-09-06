@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: my-app-prod
+  namespace: argocd
+
+spec:
+  project: platform-project
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: my-app-prod
+
+  sources:
+
+    # Helm chart source
+    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-app.git
+      targetRevision: main
+      path: my-app
+
+      helm:
+        valueFiles:
+          - $values/environments/my-app/prod/values.yaml
+
+    # GitOps values source
+    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-gitops.git
+      targetRevision: main
+      ref: values
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+  syncOptions:
+    - CreateNamespace=true
