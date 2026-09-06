@@ -3,7 +3,7 @@ replicaCount: 3
 
 image:
   repository: my-app
-  tag: v1
+  tag: v2
   pullPolicy: IfNotPresent
 
 app:
