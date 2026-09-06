@@ -14,19 +14,17 @@ spec:
 
   sources:
 
-    # Helm chart source
-    - repoURL: https://github.com/debnil001/argocd-demo-app.git
+    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-app.git
       targetRevision: main
       path: my-app
 
-      helm:
-        valueFiles:
-          - $values/environments/my-app/prod/values.yaml
-
-    # GitOps values source
-    - repoURL: https://github.com/debnil001/argocd-demo-gitops.git
+    - repoURL: https://github.com/<YOUR_USERNAME>/argocd-demo-gitops.git
       targetRevision: main
       ref: values
+
+  helm:
+    valueFiles:
+      - $values/environments/my-app/prod/values.yaml
 
   syncPolicy:
     automated:
@@ -34,4 +32,4 @@ spec:
       selfHeal: true
 
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true
